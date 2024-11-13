@@ -12,6 +12,14 @@
 
   <!-- Adding the modules, API key, and map constant needed for a full screen map app -->
   <script>
+
+require([  
+"esri/config",  
+"esri/Map",  
+"esri/views/MapView",   
+"esri/Graphic",  
+"esri/layers/GraphicsLayer"   
+], function(esriConfig,Map, MapView, Graphic, GraphicsLayer) {
   
     require([
      "esri/config",
@@ -30,6 +38,9 @@
           zoom: 13, // Zoom level
           container: "viewDiv" // Div element
         });
+
+const graphicsLayer = new GraphicsLayer();  
+map.add(graphicsLayer);
     });
   </script>
 
